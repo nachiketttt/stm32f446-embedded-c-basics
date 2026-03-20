@@ -1,9 +1,7 @@
 #include <stdint.h>
 #include <stdio.h>
 #include "main.h"
-//    uint32_t *pClkctrlreg = (uint32_t*)0x40023830;
- //   uint32_t *pPortAModeReg = (uint32_t*)0x40020000;
-   // uint32_t *pPortAOutReg = (uint32_t*)0x40020014;
+
 int main(void)
 {
 	RCC_AHB1ENR_t volatile *const pClkctrlreg= (RCC_AHB1ENR_t*)0x40023830;
@@ -15,14 +13,16 @@ int main(void)
 	//1. Enable the clk for gpioa peripheral in ahb1
 	pClkctrlreg->gpioa_en=1;
 
-    //2. Config the mode of gpioa mode reg
-    //a. clr the 11th and 10th bit
+        //2. Config the mode of gpioa mode reg
+        //a. clr the 11th and 10th bit
 	pPortAModeReg->pin_5=0;
+	
 	//b. make 10th bit set to 1
 	pPortAModeReg->pin_5=1;
 	pPortAOutReg->pin_5=1;
+	
 	for(;;);
-/*	while(1)
+	while(1)
 	{
 		//3. Set 5th bit of the o/p data register to make i/o pin 5 as high
 		pPortAOutReg->pin_5=1;
@@ -33,5 +33,5 @@ int main(void)
 		//gives delay while led off
 		for(uint32_t i=0;i<30000;i++);
 	}
-*/
+
 }
