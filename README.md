@@ -10,7 +10,7 @@ register manipulation without HAL.
 | 001_led_toggle | LED toggle using GPIO output register |
 | 002_keypad_input | 4x4 keypad scanning using GPIO input |
 | 003_led_bitfield | LED control using C bitfield structs |
-| 004_port_reset | Reading and resetting Port A and B values |
+| 004_port_reset | Resetting Port A and B values |
 
 ## Note
 These are basic and foundational GPIO exercises demonstrating 
