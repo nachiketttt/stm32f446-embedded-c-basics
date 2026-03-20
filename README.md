@@ -15,5 +15,6 @@ register manipulation without HAL.
 ## Note
 These are basic and foundational GPIO exercises demonstrating 
 direct register access and manipulation before moving to bare-metal driver abstraction.
+
 Full peripheral drivers available in 
 [stm32f446-baremetal-peripheral-drivers](https://github.com/nachiketttt/stm32f446-baremetal-peripheral-drivers)
